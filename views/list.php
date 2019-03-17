@@ -2,7 +2,7 @@
 <div class="content">
   <div class="container">
     <h2>TODOLIST - TOPIC TEST IN EST ROUGE COMPANY</h2>
-    <div class="btn-group">
+    <div class="btn-groups">
       <a href="/?action=add" class="btn btn-inline btn-success">Add New Work</button></a>
       <a href="/?action=calendar" class="btn btn-inline btn-warning">View Calendar</button></a>
     </div>
