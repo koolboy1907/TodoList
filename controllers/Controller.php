@@ -18,8 +18,8 @@
 
     $id = isset($_GET['id']) ? $_GET['id'] : '';
     $name = isset($_POST['name']) ? $_POST['name'] : '';
-    $startDate = isset($_POST['start_date']) ? date('Y-m-d',strtotime($_POST['start_date'])) : '';
-    $endDate = isset($_POST['end_date']) ? date('Y-m-d',strtotime($_POST['end_date'])) : '';
+    $startDate = isset($_POST['start_date']) ? date('Y-m-d H:i:s',strtotime($_POST['start_date'])) : '';
+    $endDate = isset($_POST['end_date']) ? date('Y-m-d H:i:s',strtotime($_POST['end_date'])) : '';
     $status = isset($_POST['status']) ? $_POST['status'] : '';
     $arrStatus = ['Planning', 'Doing', 'Complete'];
     switch ($action) {
@@ -29,7 +29,7 @@
         break;
 
       case 'add':
-       if(isset($_POST['add-work'])) {
+       if(isset($_POST['submit'])) {
          $this->database->insertData($name, $startDate, $endDate, $status);
        }
         require_once('views/add.php');
