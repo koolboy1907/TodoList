@@ -1,0 +1,22 @@
+.content {
+	padding: 100px 0;
+}
+.content .btn-group {
+	float: right;
+	margin: 20px 0;
+}
+.content h2 {
+	text-align: center;
+	font-weight: 600
+}
+.content h4 {
+	margin-top: 50px;
+}
+.form select {
+	width: 100%;
+	height: 38px;
+}
+.form .form-control[readonly] {
+  background-color: #fff;
+  cursor: pointer;	
+}
