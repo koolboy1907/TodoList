@@ -3,19 +3,19 @@
   <div class="container">
     <h2>TODOLIST - TOPIC TEST IN EST ROUGE COMPANY</h2>
     <h4>ADD NEW WORK</h4>
-    <form id="add-new-work" class="form" name="add-new-work" action="" method="POST">
+    <form id="add-new-work" class="form" action="" method="POST">
       <fieldset class="form-group">
         <label class="form-label">Work Name</label>
-        <input name="name" type="text" class="form-control" data-validation="[NOTEMPTY]">
+        <input type="text" class="form-control" name="name" placeholder="Test Topic EST ROUGE" required>
       </fieldset>
       <div class="row">
         <div class="form-group col-md-6">
           <label class="form-label">Starting Date</label>
-          <input id="start-date" class="flatpickr form-control" name="start-date" type="text" placeholder="Select date..." data-validation="[NOTEMPTY]">
+          <input id="start-date" class="flatpickr form-control" name="start_date" type="text" placeholder="Select date..." required>
         </div>
         <div class="form-group col-md-6">
           <label class="form-label">Ending Date</label>
-          <input id="end-date" class="flatpickr form-control" name="end-date" type="text" placeholder="Select date..." data-validation="[NOTEMPTY]">
+          <input id="end-date" class="flatpickr form-control" name="end_date" type="text" placeholder="Select date..." required>
         </div>
       </div>
       <div class="form-group row">
@@ -23,14 +23,16 @@
           <label class="form-label">Status</label>
           <select name="status">
             <!-- <option value="">Select</option> -->
-            <option value="Planning">Planning</option>
-            <option value="Doing">Doing</option>
-            <option value="Complete">Complete</option>
+            <?php foreach ($arrStatus as $status) {?>
+              <option value="<?= $status?>"><?= $status?></option>
+            <?php } ?>
           </select>
         </div>
       </div>
       <fieldset class="form-group">
-        <button type="submit" class="btn">Submit</button>
+        <input type="submit" class="btn btn-inline" name="add-work" value="Add">
+        <a href="/?action=list" class="btn btn-inline btn-success">List Work</a>
+        <a href="?action=calendar" class="btn btn-inline btn-warning">View on calender</a>
       </fieldset>
     </form>
   </div>

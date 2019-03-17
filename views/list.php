@@ -20,36 +20,28 @@
       </tr>
       </thead>
       <tbody>
-      <tr>
-        <td>1</td>
-        <td>Test Topic</td>
-        <td>03/16/2019</td>
-        <td>03/18/2019</td>
-        <td>Doing</td>
-        <td>
-          <div class="tabledit-toolbar btn-toolbar" style="text-align: left;">
-            <div class="btn-group btn-group-sm" style="float: none;">
-              <a href="#" class="tabledit-edit-button btn btn-sm btn-default" style="float: none;"><span class="glyphicon glyphicon-pencil"></span></a>
-              <a href="#" class="tabledit-delete-button btn btn-sm btn-default" style="float: none;"><span class="glyphicon glyphicon-trash"></span></a>
+      <?php
+      $stt = 1;
+      foreach ($works as $work){ ?>
+        <tr>
+          <td><?= $stt; ?></td>
+          <td><?= $work['name'];?></td>
+          <td><?= $work['start_date'];?></td>
+          <td><?= $work['end_date'];?></td>
+          <td><?= $work['status'];?></td>
+          <td>
+            <div class="tabledit-toolbar btn-toolbar" style="text-align: left;">
+              <div class="btn-group btn-group-sm" style="float: none;">
+                <a href="/?action=edit&id=<?= $work['id']; ?>" class="tabledit-edit-button btn btn-sm btn-default" style="float: none;"><span class="glyphicon glyphicon-pencil"></span></a>
+                <a onclick="return confirm('Are you sure you want to delete this work?')" href="/?action=delete&id=<?= $work['id']; ?>" class="tabledit-delete-button btn btn-sm btn-default" style="float: none;"><span class="glyphicon glyphicon-trash"></span></a>
+              </div>
             </div>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>Go to interview</td>
-        <td>03/19/2019</td>
-        <td>03/19/2019</td>
-        <td>Planning</td>
-        <td>
-          <div class="tabledit-toolbar btn-toolbar" style="text-align: left;">
-            <div class="btn-group btn-group-sm" style="float: none;">
-              <a href="#" class="tabledit-edit-button btn btn-sm btn-default" style="float: none;"><span class="glyphicon glyphicon-pencil"></span></a>
-              <a href="#" class="tabledit-delete-button btn btn-sm btn-default" style="float: none;"><span class="glyphicon glyphicon-trash"></span></a>
-            </div>
-          </div>
-        </td>
-      </tr>
+          </td>
+        </tr>
+        <?php
+        $stt++;
+      }
+      ?>
       </tbody>
     </table>
   </div><!--.container-->

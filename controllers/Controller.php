@@ -1,48 +1,61 @@
 <?php
-include_once("models/Model.php");
+  include_once("models/Database.php");
 
-class Controller {
-  public $model;
+  class Controller {
+  public $database;
+
+
 
   public function __construct()
   {
-    $this->model = new Model();
+    $this->database = new Database();
+    $this->database->connect();
   }
 
   public function action()
   {
     $action = isset($_GET['action']) ? $_GET['action'] : '';
-    switch ($action) {
-      case 'add':
-//       if(isset($_POST['submit'])) {
-//         $db->insertData($name, $startDate, $endDate, $status);
-//       }
-        require_once('views/add.php');
-        break;
-      case 'edit':
-//       if($id) {
-//         $work = $db->getDataByID($id);
-//
-//         if(isset($_POST['submit'])){
-//           if($db->updateData($id, $name, $startDate, $endDate, $status)) {
-//             header('location: index.php?controller=todo&action=list');
-//           }
-//         }
-//       }
-        require_once('views/edit.php');
-        break;
-      case 'delete':
-//       if($id) {
-//         $db->deleteData($id);
-//         header('location: index.php?controller=todo&action=list');
-//       }
 
-        break;
+    $id = isset($_GET['id']) ? $_GET['id'] : '';
+    $name = isset($_POST['name']) ? $_POST['name'] : '';
+    $startDate = isset($_POST['start_date']) ? date('Y-m-d',strtotime($_POST['start_date'])) : '';
+    $endDate = isset($_POST['end_date']) ? date('Y-m-d',strtotime($_POST['end_date'])) : '';
+    $status = isset($_POST['status']) ? $_POST['status'] : '';
+    $arrStatus = ['Planning', 'Doing', 'Complete'];
+    switch ($action) {
       case 'list':
-        //$works = $db->getListData();
+        $works = $this->database->getListData();
         require_once('views/list.php');
         break;
+
+      case 'add':
+       if(isset($_POST['add-work'])) {
+         $this->database->insertData($name, $startDate, $endDate, $status);
+       }
+        require_once('views/add.php');
+        break;
+
+      case 'edit':
+       if($id) {
+         $work = $this->database->getDataByID($id);
+         if(isset($_POST['submit'])){
+           if($this->database->updateData($id, $name, $startDate, $endDate, $status)) {
+             header('location: /?action=list');
+           }
+         }
+       }
+        require_once('views/edit.php');
+        break;
+
+      case 'delete':
+       if($id) {
+         $this->database->deleteData($id);
+         header('location: index.php?action=list');
+       }
+        break;
+
       default:
+        $works = $this->database->getListData();
         require_once('views/list.php');
         break;
     }
