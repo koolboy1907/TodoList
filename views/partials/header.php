@@ -15,6 +15,8 @@
   <![endif]-->
   <link rel="stylesheet" href="assets/css/lib/flatpickr/flatpickr.min.css">
   <link rel="stylesheet" href="assets/css/separate/vendor/flatpickr.min.css">
+  <link rel="stylesheet" href="assets/css/lib/fullcalendar/fullcalendar.min.css">
+  <link rel="stylesheet" href="assets/css/separate/pages/calendar.min.css">
   <link rel="stylesheet" href="assets/css/separate/vendor/bootstrap-daterangepicker.min.css">
   <link rel="stylesheet" href="assets/css/lib/clockpicker/bootstrap-clockpicker.min.css">
   <link rel="stylesheet" href="assets/css/separate/vendor/bootstrap-select/bootstrap-select.min.css">

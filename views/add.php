@@ -32,7 +32,7 @@
       <fieldset class="form-group">
         <input type="submit" class="btn btn-inline" name="add-work" value="Add">
         <a href="/?action=list" class="btn btn-inline btn-success">List Work</a>
-        <a href="?action=calendar" class="btn btn-inline btn-warning">View on calender</a>
+        <a href="?action=calendar" class="btn btn-inline btn-warning">View Calender</a>
       </fieldset>
     </form>
   </div>

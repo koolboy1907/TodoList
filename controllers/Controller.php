@@ -54,6 +54,11 @@
        }
         break;
 
+      case 'calendar':
+        $workCalendar = $this->database->getListData();
+        require_once('views/calendar.php');
+        break;
+
       default:
         $works = $this->database->getListData();
         require_once('views/list.php');
