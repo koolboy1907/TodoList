@@ -1,6 +1,7 @@
 <?php
-include_once("models/Database.php");
-include_once("controllers/Controller.php");
+require __DIR__ . '/vendor/autoload.php';
+
+use TodoList\Controllers\Controller;
 
 $controller = new Controller();
 $controller->action();
