@@ -1,4 +1,4 @@
-<?php include_once("partials/header.php");?>
+<?php include_once("partials/header.php"); ?>
 <div class="content">
   <div class="container">
     <h2>TODOLIST - TOPIC TEST IN EST ROUGE COMPANY</h2>
@@ -24,8 +24,8 @@
           <select name="status">
             <!-- <option value="">Select</option> -->
             <?php foreach ($arrStatus as $status) {?>
-              <?php $seledted = $status == $work['status'] ? 'selected' : '' ;?>
-              <option value="<?= $status?>" <?= $seledted ?>><?= $status?></option>
+              <?php $seledted = ($status == $work['status']) ? 'selected' : ''; ?>
+              <option value="<?= $status?>" <?= $seledted ?>><?= $status; ?></option>
             <?php } ?>
           </select>
         </div>
@@ -36,4 +36,4 @@
     </form>
   </div>
 </div>
-<?php include_once("partials/footer.php");?>
+<?php include_once("partials/footer.php"); ?>

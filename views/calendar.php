@@ -1,4 +1,4 @@
-<?php include_once("partials/header.php");?>
+<?php include_once("partials/header.php"); ?>
 <div class="content">
   <div class="container">
     <h2>TODOLIST - TOPIC TEST IN EST ROUGE COMPANY</h2>
@@ -15,7 +15,7 @@
 <script src="assets/js/lib/bootstrap/bootstrap.min.js"></script>
 <script src="assets/js/plugins.js"></script>
 
-<script>  var worksJson = <?= json_encode($workCalendar); ?>;</script>
+<script>var worksJson = <?= json_encode($workCalendar); ?>;</script>
 <script type="text/javascript" src="assets/js/lib/moment/moment-with-locales.min.js"></script>
 <script type="text/javascript" src="assets/js/lib/flatpickr/flatpickr.min.js"></script>
 <script src="assets/js/lib/fullcalendar/fullcalendar.min.js"></script>

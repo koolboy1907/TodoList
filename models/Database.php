@@ -70,7 +70,6 @@
     public function updateData($id, $name, $startDate, $endDate, $status)
     {
       $sql = "UPDATE work SET name = '$name', start_date = '$startDate', end_date = '$endDate', status = '$status' WHERE id = '$id'";
-      //echo $sql;
       return $this->execute($sql);
     }
 
